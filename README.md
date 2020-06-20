@@ -1,4 +1,4 @@
-Virtual Admin
+Virtual Content
 ---
 
-Virtual model based kit for admin pane basic logic
+Virtual model based kit for content management
