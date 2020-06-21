@@ -8,10 +8,10 @@ use kosuha606\VirtualAdmin\Form\SecondaryFormService;
 use kosuha606\VirtualAdmin\Services\StringService;
 use kosuha606\VirtualAdmin\Structures\DetailComponents;
 use kosuha606\VirtualAdmin\Structures\ListComponents;
-use kosuha606\VritualContent\Domains\Article\Models\ArticleVm;
+use kosuha606\VirtualContent\Domains\Article\Models\ArticleVm;
 use kosuha606\VirtualModel\VirtualModel;
 use kosuha606\VirtualModelHelppack\ServiceManager;
-use kosuha606\VritualContent\Domains\Page\Models\SeoPageVm;
+use kosuha606\VirtualContent\Domains\Page\Models\SeoPageVm;
 
 $baseEntity = 'article';
 $stringService = ServiceManager::getInstance()->get(\kosuha606\VirtualAdmin\Services\StringService::class);

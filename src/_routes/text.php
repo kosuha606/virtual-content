@@ -3,9 +3,9 @@
 use kosuha606\VirtualAdmin\Services\StringService;
 use kosuha606\VirtualAdmin\Structures\DetailComponents;
 use kosuha606\VirtualAdmin\Structures\ListComponents;
-use kosuha606\VritualContent\Domains\Article\Models\ArticleVm;
-use kosuha606\VritualContent\Domains\Article\Models\SeoArticleVm;
-use kosuha606\VritualContent\Domains\Text\Models\TextVm;
+use kosuha606\VirtualContent\Domains\Article\Models\ArticleVm;
+use kosuha606\VirtualContent\Domains\Article\Models\SeoArticleVm;
+use kosuha606\VirtualContent\Domains\Text\Models\TextVm;
 use kosuha606\VirtualModelHelppack\ServiceManager;
 
 $baseEntity = 'text';

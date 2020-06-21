@@ -1,6 +1,6 @@
 <?php
 
-namespace kosuha606\VritualContent;
+namespace kosuha606\VirtualContent;
 
 use kosuha606\VirtualAdmin\Interfaces\AdminRoutesLoaderInterface;
 use kosuha606\VirtualAdmin\Services\AdminConfigService;

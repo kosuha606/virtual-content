@@ -1,6 +1,6 @@
 <?php
 
-namespace kosuha606\VritualContent\Domains\Page\Models;
+namespace kosuha606\VirtualContent\Domains\Page\Models;
 
 use kosuha606\VirtualAdmin\Domains\Multilang\MultilangTrait;
 use kosuha606\VirtualAdmin\Domains\Search\SearchableInterface;

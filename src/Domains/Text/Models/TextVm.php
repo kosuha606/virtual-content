@@ -1,6 +1,6 @@
 <?php
 
-namespace kosuha606\VritualContent\Domains\Text\Models;
+namespace kosuha606\VirtualContent\Domains\Text\Models;
 
 use kosuha606\VirtualModel\VirtualModel;
 
