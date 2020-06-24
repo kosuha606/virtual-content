@@ -42,7 +42,7 @@ class PageVm extends VirtualModel
 
     public function buildUrl()
     {
-        return '/'.$this->id.'_'.$this->slug;
+        return '/'.$this->id.'-'.$this->slug;
     }
 
     /**
