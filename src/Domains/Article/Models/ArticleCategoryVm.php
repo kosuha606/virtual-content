@@ -68,10 +68,22 @@ class ArticleCategoryVm extends VirtualModel implements SeoModelInterface
         return $parent;
     }
 
+    public function allChildrens()
+    {
+        $children = $this->children();
+
+        /** @var ArticleCategoryVm $child */
+        foreach ($children as $child) {
+            $children = array_merge($children, $child->children());
+        }
+
+        return $children;
+    }
+
     public function children()
     {
         $children = ArticleCategoryVm::many(['where' => [
-            ['=', 'parent_id', $this->id]
+            ['=', 'parent_id', $this->id],
         ]]);
 
         return $children;
