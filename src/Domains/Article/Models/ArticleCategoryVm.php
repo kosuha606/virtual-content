@@ -68,6 +68,15 @@ class ArticleCategoryVm extends VirtualModel implements SeoModelInterface
         return $parent;
     }
 
+    public function children()
+    {
+        $children = ArticleCategoryVm::many(['where' => [
+            ['=', 'parent_id', $this->id]
+        ]]);
+
+        return $children;
+    }
+
     /**
      * Все родители категории
      *
