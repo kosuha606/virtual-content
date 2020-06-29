@@ -22,6 +22,7 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property  $content
  * @property  $category_id
  * @property  $created_at
+ * @property  $updated_at
  *
  */
 class ArticleVm extends VirtualModel
@@ -47,7 +48,7 @@ class ArticleVm extends VirtualModel
     {
         $category = ArticleCategoryVm::one(['where' => [['=', 'id', $this->category_id]]]);
 
-        return $category->getUrl().'/'.$this->id.'-'.$this->slug;
+        return $category->buildUrl().'/'.$this->id.'-'.$this->slug;
     }
 
     /**

@@ -39,7 +39,7 @@ class ArticleCategoryVm extends VirtualModel implements SeoModelInterface
         $parentsSlug = '/';
 
         if ($parent = $this->parent()) {
-            $parentsSlug = $parent->getUrl().'/';
+            $parentsSlug = $parent->buildUrl().'/';
         }
 
         return $parentsSlug.$this->id.'-'.$this->slug;
