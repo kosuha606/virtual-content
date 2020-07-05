@@ -2,7 +2,7 @@
 
 namespace kosuha606\VirtualContent\Domains\Text\Models;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
 /**
  *
@@ -11,7 +11,7 @@ use kosuha606\VirtualModel\VirtualModel;
  * @property $content
  *
  */
-class TextVm extends VirtualModel
+class TextVm extends VirtualModelEntity
 {
     public function attributes(): array
     {

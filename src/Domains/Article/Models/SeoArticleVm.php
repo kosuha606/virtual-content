@@ -2,9 +2,9 @@
 
 namespace kosuha606\VirtualContent\Domains\Article\Models;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
-class SeoArticleVm extends VirtualModel
+class SeoArticleVm extends VirtualModelEntity
 {
     public function attributes(): array
     {

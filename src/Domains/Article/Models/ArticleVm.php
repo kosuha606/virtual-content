@@ -10,7 +10,7 @@ use kosuha606\VirtualAdmin\Domains\Seo\SeoModelInterface;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelTrait;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
 use kosuha606\VirtualAdmin\Domains\Version\VersionObserver;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
 /**
@@ -23,7 +23,7 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property  $created_at
  *
  */
-class ArticleVm extends VirtualModel
+class ArticleVm extends VirtualModelEntity
     implements SearchableInterface,
     SeoModelInterface
 {

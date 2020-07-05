@@ -9,7 +9,7 @@ use kosuha606\VirtualAdmin\Domains\Search\SearchObserver;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelInterface;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelTrait;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
 /**
@@ -21,7 +21,7 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property $created_at
  *
  */
-class PageVm extends VirtualModel
+class PageVm extends VirtualModelEntity
     implements
     SearchableInterface,
     SeoModelInterface
