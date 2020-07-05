@@ -3,9 +3,9 @@
 namespace kosuha606\VirtualContent\Domains\Page\Models;
 
 use kosuha606\VirtualAdmin\Domains\Multilang\MultilangTrait;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
-class SeoPageVm extends VirtualModel
+class SeoPageVm extends VirtualModelEntity
 {
     use MultilangTrait;
 
