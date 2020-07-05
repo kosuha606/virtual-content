@@ -6,7 +6,7 @@ use kosuha606\VirtualAdmin\Domains\Multilang\MultilangTrait;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelInterface;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelTrait;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
 /**
@@ -17,7 +17,7 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property $parent_id
  *
  */
-class ArticleCategoryVm extends VirtualModel implements SeoModelInterface
+class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
 {
     use MultilangTrait;
 

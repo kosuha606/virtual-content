@@ -12,6 +12,7 @@ use kosuha606\VirtualAdmin\Structures\SecondaryForms;
 use kosuha606\VirtualContent\Domains\Article\Models\ArticleCategoryVm;
 use kosuha606\VirtualContent\Domains\Article\Models\ArticleVm;
 use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\ServiceManager;
 use kosuha606\VirtualContent\Domains\Page\Models\SeoPageVm;
 
@@ -123,7 +124,7 @@ return [
                                 'component' => DetailComponents::SELECT_FIELD,
                                 'value' => $model->parent_id,
                                 'props' => [
-                                    'items' => $stringService->map(VirtualModel::allToArray(ArticleCategoryVm::many(['where' => [[
+                                    'items' => $stringService->map(VirtualModelEntity::allToArray(ArticleCategoryVm::many(['where' => [[
                                         '<>', 'id', $model->id
                                     ]]])), 'id', 'name')
                                 ]

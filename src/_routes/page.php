@@ -10,7 +10,7 @@ use kosuha606\VirtualAdmin\Structures\DetailComponents;
 use kosuha606\VirtualAdmin\Structures\ListComponents;
 use kosuha606\VirtualAdmin\Structures\SecondaryForms;
 use kosuha606\VirtualContent\Domains\Page\Models\PageVm;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\ServiceManager;
 
 $baseEntity = 'page';

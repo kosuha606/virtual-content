@@ -3,7 +3,7 @@
 namespace kosuha606\VirtualContent\Domains\Article;
 
 use kosuha606\VirtualContent\Domains\Article\Models\ArticleCategoryVm;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
 class ArticleCategoryService
 {
@@ -18,7 +18,7 @@ class ArticleCategoryService
 
         if ($activeCategoryId) {
             $activeCategory = ArticleCategoryVm::one(['where' => [['=', 'id', $activeCategoryId]]]);
-            $parents = VirtualModel::allToArray($activeCategory->parents());
+            $parents = VirtualModelEntity::allToArray($activeCategory->parents());
             $this->allActiveParentIds = array_column($parents, 'id');
         }
 
