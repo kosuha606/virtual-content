@@ -20,7 +20,9 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property  $photo
  * @property  $slug
  * @property  $content
+ * @property  $category_id
  * @property  $created_at
+ * @property  $updated_at
  *
  */
 class ArticleVm extends VirtualModelEntity
@@ -44,7 +46,9 @@ class ArticleVm extends VirtualModelEntity
 
     public function buildUrl()
     {
-        return '/news/'.$this->id.'_'.$this->slug;
+        $category = ArticleCategoryVm::one(['where' => [['=', 'id', $this->category_id]]]);
+
+        return $category->buildUrl().'/'.$this->id.'-'.$this->slug;
     }
 
     /**
@@ -77,6 +81,7 @@ class ArticleVm extends VirtualModelEntity
         return [
             'id',
             'title',
+            'category_id',
             'photo',
             'slug',
             'content',

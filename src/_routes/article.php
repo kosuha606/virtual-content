@@ -9,6 +9,7 @@ use kosuha606\VirtualAdmin\Services\StringService;
 use kosuha606\VirtualAdmin\Structures\DetailComponents;
 use kosuha606\VirtualAdmin\Structures\ListComponents;
 use kosuha606\VirtualAdmin\Structures\SecondaryForms;
+use kosuha606\VirtualContent\Domains\Article\Models\ArticleCategoryVm;
 use kosuha606\VirtualContent\Domains\Article\Models\ArticleVm;
 use kosuha606\VirtualModel\VirtualModel;
 use kosuha606\VirtualModelHelppack\ServiceManager;
@@ -65,6 +66,18 @@ return [
                             'props' => [
                                 'link' => 1,
                             ]
+                        ],
+                        [
+                            'field' => 'category_id',
+                            'component' => ListComponents::STRING_CELL,
+                            'label' => 'Категория',
+                            'value' => function($model) {
+                                $parent = ArticleCategoryVm::one(['where' => [['=', 'id', $model['category_id']]]]);
+
+                                return $parent->id
+                                    ? $parent->name . ' #' . $parent->id
+                                    : '--';
+                            }
                         ],
                     ]
                 ]
@@ -190,6 +203,17 @@ return [
                                 'component' => DetailComponents::IMAGE_FIELD,
                                 'label' => 'Изображение',
                                 'value' => $model->photo,
+                            ],
+                            [
+                                'field' => 'category_id',
+                                'label' => 'Категория',
+                                'component' => DetailComponents::SELECT_FIELD,
+                                'value' => $model->category_id,
+                                'props' => [
+                                    'items' => $stringService->map(VirtualModel::allToArray(ArticleCategoryVm::many([
+                                        'where' => [['all']
+                                    ]])), 'id', 'name')
+                                ]
                             ],
                             [
                                 'field' => 'slug',

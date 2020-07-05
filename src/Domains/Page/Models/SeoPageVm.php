@@ -2,10 +2,13 @@
 
 namespace kosuha606\VirtualContent\Domains\Page\Models;
 
-use kosuha606\VirtualModel\VirtualModelEntity;
+use kosuha606\VirtualAdmin\Domains\Multilang\MultilangTrait;
+use kosuha606\VirtualModel\VirtualModel;
 
-class SeoPageVm extends VirtualModelEntity
+class SeoPageVm extends VirtualModel
 {
+    use MultilangTrait;
+
     public function attributes(): array
     {
         return [
