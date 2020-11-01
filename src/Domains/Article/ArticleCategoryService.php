@@ -7,8 +7,14 @@ use kosuha606\VirtualModel\VirtualModelEntity;
 
 class ArticleCategoryService
 {
+    /** @var array  */
     public $allActiveParentIds = [];
 
+    /**
+     * @param null $activeCategoryId
+     * @return array
+     * @throws \Exception
+     */
     public function categoriesTreeData($activeCategoryId = null)
     {
         $data = [];
@@ -23,13 +29,19 @@ class ArticleCategoryService
         }
 
         foreach ($categories as $category) {
-            $data[] = $this->categoryData($category, $activeCategoryId);
+            $data[] = $this->getCategoryData($category, $activeCategoryId);
         }
 
         return $data;
     }
 
-    private function categoryData(ArticleCategoryVm $category, $activeCategoryId = null)
+    /**
+     * @param ArticleCategoryVm $category
+     * @param null $activeCategoryId
+     * @return array
+     * @throws \Exception
+     */
+    private function getCategoryData(ArticleCategoryVm $category, $activeCategoryId = null)
     {
         $result = [
             'text' => $category->name,
@@ -40,7 +52,7 @@ class ArticleCategoryService
         $children = $category->children();
 
         foreach ($children as $child) {
-            $result['nodes'][] = $this->categoryData($child, $activeCategoryId);
+            $result['nodes'][] = $this->getCategoryData($child, $activeCategoryId);
         }
 
         return $result;

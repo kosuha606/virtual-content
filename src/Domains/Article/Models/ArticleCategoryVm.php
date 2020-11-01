@@ -10,12 +10,10 @@ use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
 /**
- *
  * @property $id,
  * @property $name,
  * @property $slug
  * @property $parent_id
- *
  */
 class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
 {
@@ -25,6 +23,9 @@ class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
 
     use SeoModelTrait;
 
+    /**
+     * @return array
+     */
     public static function observers()
     {
         return [
@@ -32,10 +33,11 @@ class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
         ];
     }
 
+    /**
+     * @return string
+     */
     public function buildUrl()
     {
-        /** @var ArticleCategoryVm[] $parents */
-        $parents = array_reverse($this->parents());
         $parentsSlug = '/';
 
         if ($parent = $this->parent()) {
@@ -45,6 +47,9 @@ class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
         return $parentsSlug.$this->id.'-'.$this->slug;
     }
 
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [
@@ -68,6 +73,9 @@ class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
         return $parent;
     }
 
+    /**
+     * @return array
+     */
     public function allChildrens()
     {
         $children = $this->children();
@@ -80,6 +88,9 @@ class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
         return $children;
     }
 
+    /**
+     * @return array
+     */
     public function children()
     {
         $children = ArticleCategoryVm::many(['where' => [
@@ -90,8 +101,6 @@ class ArticleCategoryVm extends VirtualModelEntity implements SeoModelInterface
     }
 
     /**
-     * Все родители категории
-     *
      * @return array
      */
     public function parents()

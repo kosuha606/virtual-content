@@ -13,13 +13,11 @@ use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
 /**
- *
  * @property $id
  * @property $title
  * @property $slug
  * @property $content
  * @property $created_at
- *
  */
 class PageVm extends VirtualModelEntity
     implements
@@ -32,6 +30,9 @@ class PageVm extends VirtualModelEntity
 
     use SeoModelTrait;
 
+    /**
+     * @return array
+     */
     public static function observers()
     {
         return [
@@ -40,6 +41,9 @@ class PageVm extends VirtualModelEntity
         ];
     }
 
+    /**
+     * @return string
+     */
     public function buildUrl()
     {
         return '/'.$this->id.'-'.$this->slug;
@@ -72,6 +76,9 @@ class PageVm extends VirtualModelEntity
         );
     }
 
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [

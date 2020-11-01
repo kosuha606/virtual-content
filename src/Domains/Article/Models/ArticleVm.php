@@ -14,7 +14,6 @@ use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
 /**
- *
  * @property  $id
  * @property  $title
  * @property  $photo
@@ -23,7 +22,6 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property  $category_id
  * @property  $created_at
  * @property  $updated_at
- *
  */
 class ArticleVm extends VirtualModelEntity
     implements SearchableInterface,
@@ -35,6 +33,9 @@ class ArticleVm extends VirtualModelEntity
 
     use SeoModelTrait;
 
+    /**
+     * @return array
+     */
     public static function observers()
     {
         return [
@@ -44,6 +45,9 @@ class ArticleVm extends VirtualModelEntity
         ];
     }
 
+    /**
+     * @return string
+     */
     public function buildUrl()
     {
         $category = ArticleCategoryVm::one(['where' => [['=', 'id', $this->category_id]]]);
@@ -76,6 +80,9 @@ class ArticleVm extends VirtualModelEntity
         ]);
     }
 
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [
